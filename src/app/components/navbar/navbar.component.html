@@ -1,0 +1,123 @@
+<!-- <header>
+  <div  class="container">
+
+    <div class="row">
+      <div class="col-md-1 col-sm-1 col-xs-1">
+        <div class="logo">
+          <img src="" alt="logo">
+        </div>
+
+      </div>
+
+
+      <div class="col-md-11 col-sm-11 col-11 col-xs-11 text-end ">
+
+
+      <div class="menu_icon" [class.menu_iconClass]="menu_icon_variable" (click)="openMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+      </div>
+
+
+        <div class="menu" [class.menuClasse]="menuVariable">
+          <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Servicios</a></li>
+            <li><a href="#">Calculadora</a></li>
+            <li><a href="#">Contacto</a></li>
+            <li><a href="#">Nosotros</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</header>
+ -->
+
+<!--separator-->
+
+<div class="nav">
+    <input type="checkbox" id="nav-check">
+    <div class="nav-header">
+        <div class="nav-title" (click)="quitarnav()">
+            <img src="./assets/logo-aumc.png" alt="Chicago" class="d-block w-100">
+        </div>
+    </div>
+    <div class="nav-btn">
+        <label for="nav-check" (click)="quitarnav()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+    </div>
+
+    <div class="nav-links" id="nav-links">
+        <a href="">Inicio</a>
+        <a class="nav-link dropdown-toggle" (click)="quitarnav2()" style="color:transparent" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a style="color: #333333; text-decoration: none;" routerLink="/servicios" >Servicio</a>
+        </a>
+        <div class="container-fluid dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <div class="row "> 
+             <div class="col-3 p-5 d-flex justify-content-center align-content-center our-services">
+              <h2 style="text-align: center;">Nuestros Servicios</h2>
+             </div>
+
+             <div class="col-9 ps-3 pe-5 pb-5 pt-4">
+                 <div class="row">
+                  <div class="col-3"> 
+                    <div class="row">
+                      <div class="col-12"><h4 class="categoria-servicio pb-2 pt-2 ">Trámites</h4></div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12 pb-1">Opción 1</div>
+                        <div class="col-12 pb-1">Opción 2</div>
+                        <div class="col-12 pb-1">Opción 3</div>
+                        <div class="col-12 pb-1">Opción 4</div>
+                      </div>
+                  </div>
+                  <div class="col-3">   <div class="row">
+                    <div class="col-12"><h4 class="categoria-servicio pb-2 pt-2 ">Asesorías</h4></div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12 pb-1">Opción 1</div>
+                      <div class="col-12 pb-1">Opción 2</div>
+                      <div class="col-12 pb-1">Opción 3</div>
+                      <div class="col-12 pb-1">Opción 4</div>
+                    </div></div>
+                  <div class="col-3">  <div class="row">
+                    <div class="col-12"><h4 class="categoria-servicio pb-2 pt-2  ">Gobierno</h4></div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12 pb-1">Opción 1</div>
+                      <div class="col-12 pb-1">Opción 2</div>
+                      <div class="col-12 pb-1">Opción 3</div>
+                      <div class="col-12 pb-1">Opción 4</div>
+                    </div></div>
+                  <div class="col-3">   <div class="row">
+                    <div class="col-12"><h4 class="categoria-servicio pb-2 pt-2  ">Altas</h4></div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12 pb-1">Opción 1</div>
+                      <div class="col-12 pb-1">Opción 2</div>
+                      <div class="col-12 pb-1">Opción 3</div>
+                      <div class="col-12 pb-1">Opción 4</div>
+                    </div></div>
+                 </div>
+             </div>
+          </div>
+          <!-- <li><a class="dropdown-item" href="#">Action</a></li>
+          <li><a class="dropdown-item" href="#">Another action</a></li>
+          <li><a class="dropdown-item" href="#">Something else here</a></li> -->
+        </div>
+
+
+        <a routerLink="/contacto" (click)="quitarnav2()">Contacto</a>
+        <a routerLink="/nosotros" (click)="quitarnav2()">Nosotros</a>
+        <a routerLink="/contact" (click)="quitarnav2()">Calculadora</a>
+
+    </div>
+</div>

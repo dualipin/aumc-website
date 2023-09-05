@@ -1,0 +1,84 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    margin-top: 50px;
+}
+
+.contenedor-servicios {
+    margin-top: 2em;
+    margin-bottom: 2em;
+    width: 80%;
+    margin-right: 10%;
+    margin-left: 10%;
+    background-color: #399bdc;
+}
+
+.servicios {
+    justify-content: center;
+}
+
+.cuadro {
+    border: 1px solid #94BFDC;
+    height: auto;
+}
+
+.cuadro:hover {
+    background-color: #338BC6;
+}
+
+.icono-servicio {
+    font-size: 3rem;
+    color: white;
+}
+
+.cuadro p {
+    color: ghostwhite;
+    text-align: center;
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+
+.icon-servicio {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.titulo-services {
+    font-size: 18px;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    position: relative;
+    display: block;
+    color: whitesmoke;
+}
+
+.titulo-services:after {
+    content: "";
+    background-color: white;
+    position: absolute;
+    transform: scale(0);
+    height: 2px;
+    width: 80%;
+    bottom: 0;
+    left: 0;
+    margin-bottom: -5px;
+    margin-left: 10%;
+    margin-right: 10%;
+    transform-origin: bottom right;
+    transition: transform .6s ease-out;
+}
+
+.cuadro:hover .titulo-services:after {
+    transform: scale(1.0);
+    transform-origin: bottom right;
+}
+
+.texto-header {
+    text-align: center;
+}
