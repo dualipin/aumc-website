@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {CommonModule} from '@angular/common';
 import { SpinnersAngularModule } from 'spinners-angular';
 
 import { AppComponent } from './app.component';
@@ -22,24 +23,21 @@ import { RouterModule } from '@angular/router';
     FooterComponent,
     ServiciosComponent,
     CalculadoraComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
   ],
-  imports: [SpinnersAngularModule,
+  imports: [
+    CommonModule,
     BrowserModule,
     RouterModule.forRoot([
-      {path: '', component:HomeComponent},
-      {path: 'contacto', component:ContactoComponent},
-      {path: 'servicios', component:ServiciosComponent},
-      {path: 'nosotros', component:NosotrosComponent},
-      {path: 'nav', component:NavbarComponent},
-      { path: '**',component: PageNotFoundComponent },
-
-      
-
-    ])
-
+      { path: '', component: HomeComponent },
+      { path: 'contacto', component: ContactoComponent },
+      { path: 'servicios', component: ServiciosComponent },
+      { path: 'nosotros', component: NosotrosComponent },
+      { path: 'nav', component: NavbarComponent },
+      { path: '**', component: PageNotFoundComponent },
+    ]),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
