@@ -5,3 +5,7 @@
 	--colorCuatro: #770d15;
 	
 }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
