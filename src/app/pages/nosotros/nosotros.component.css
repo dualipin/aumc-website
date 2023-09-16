@@ -1,0 +1,133 @@
+html,body
+{
+    width: 100%;
+    height: 100%;
+
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+    overflow-y: hidden; 
+    border: 3px solid blue;
+}
+
+*{
+    font-family: 'Montserrat', sans-serif;
+}
+.parrafo-1{
+    font-size: 1rem;
+    justify-content: center;
+}
+.page-name{
+    background-color: white;
+    width: 100%;
+    padding-top: 85px;
+    text-align: center;
+    }
+    
+    .page-name h1{
+    font-size: 45px;
+    color: #333333;
+    font-weight: bold;
+    
+    }
+    .imagen{
+        object-fit: fill;
+        height: 100%;
+        padding: none;
+    }
+    .contenedor-mision{
+        padding: 2rem 2rem 2rem 2rem;
+     text-align: center;
+     height: 50%;
+     
+     
+    }
+    .contenedor-vision{
+     padding: 2rem 2rem 2rem 2rem;
+     text-align: center;
+     height: 50%;
+     
+     
+    }
+    .contenedor-mision h4{
+        font-size: 20px;
+    }
+    .contenedor-vision h4{
+        font-size: 20px;
+    }
+
+    .contenedor-mision p{
+        font-size: 13px;
+        text-align: center;
+    }
+    .contenedor-vision p{
+        font-size: 13px;
+        text-align: center;
+    }
+    .texto-misionvision{
+        background: #d9e6ea;  /* fallback for old browsers */
+     position: relative;
+        
+    }
+    .row>* {
+        padding-right: calc(var(--bs-gutter-x) * .0);
+        padding-left: calc(var(--bs-gutter-x) * .5);  
+    }
+    .row {
+    
+   
+    margin-right: calc(0 * var(--bs-gutter-x));
+    margin-left: calc(0 * var(--bs-gutter-x));
+}
+    .spann{
+        font-style: italic;
+
+        color: #47cbc0 ;
+        padding-right:5rem ;
+        padding-left: 5rem;
+        text-align: center;
+        font-size: 18px;
+
+
+    }
+    @media (max-width:600px){
+        .spann{
+            padding-left: 1rem;
+            padding-right: 1rem;
+            text-align: justify;
+        }
+        .imagen-contenedor{
+            display: none;
+        }
+        .texto-misionvision{
+            background-image: url('imagen-contacto.jpg');
+            background-repeat: no-repeat;
+            background-size: 130%,100% , cover;
+            font-size: 12px;
+            color: white;
+            
+        }
+        .parrafo-1{
+            padding: 1rem;
+        }
+    }
+    .texto-misionvision:after {
+        content: "";
+        background-color: #47cbc0 ;
+        ;
+        position: absolute;
+        transform: scale(1);
+        height: 2px;
+        width: 90%;
+        top: 50%;
+        left: 0;
+        margin-left: 5%;
+        margin-right: 5%;
+        
+ 
+        transform-origin:bottom right ;
+        transition: transform .6s ease-out; 
+      }
+    
+    
+  
