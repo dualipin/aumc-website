@@ -1,44 +1,37 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core"
+import { Links } from "./navbar.link"
 
 @Component({
-  selector: 'app-navbar',
-  templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  selector: "app-navbar",
+  templateUrl: "./navbar.component.html",
 })
-export class NavbarComponent  {
+export class NavbarComponent {
+  private systemDarkModePreference = window.matchMedia(
+    "(prefers-color-scheme: dark)",
+  )
 
-  constructor() { }
+  //Links of the navbar
+  links = Links
 
- 
-   menu_icon_variable: boolean = false;
-  menuVariable: boolean = false;
-//   ponernav(){
-//    const input = document.getElementById('nav-links')!;
-//    if (input.style.height=='0'){
-//     input.style.height='auto';
-//     console.log("hola")
-//    }
-//   else if (input.style.height=='auto')
-// {
-//     console.log('x is less than y.'); //This will be executed
-// }
-//   }
-   quitarnav(){
+  isDarkMode = this.systemDarkModePreference.matches
 
-  var element = <HTMLInputElement> document.getElementById("nav-check");
-var isChecked = element.checked;
-  if (isChecked==true){
-    element.checked==false;
-    console.log("changed to false")
-  }else if(isChecked==false){
-    console.log("changed to true")
-    element.checked==true;
+  constructor() {
+    this.changeTheme()
+    this.systemDarkModePreference.onchange = () => this.changeTheme()
+  }
+
+  changeTheme() {
+    const $favicon: HTMLLinkElement = document.querySelector(
+      "link[rel='shortcut icon']",
+    ) as HTMLLinkElement
+
+    if (this.isDarkMode) {
+      $favicon.href = "assets/icon/favicon-d.ico"
+      document.documentElement.classList.add("dark")
+    } else {
+      $favicon.href = "assets/icon/favicon-l.ico"
+      document.documentElement.classList.remove("dark")
+    }
+    this.isDarkMode = !this.isDarkMode
   }
 }
-quitarnav2(){
-  var element = <HTMLInputElement> document.getElementById("nav-check");
-  element.checked=false;
-}
-}
-//   }
-// }

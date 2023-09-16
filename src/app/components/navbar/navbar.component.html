@@ -1,123 +1,46 @@
-<!-- <header>
-  <div  class="container">
-
-    <div class="row">
-      <div class="col-md-1 col-sm-1 col-xs-1">
-        <div class="logo">
-          <img src="" alt="logo">
-        </div>
-
-      </div>
-
-
-      <div class="col-md-11 col-sm-11 col-11 col-xs-11 text-end ">
-
-
-      <div class="menu_icon" [class.menu_iconClass]="menu_icon_variable" (click)="openMenu()">
-          <span></span>
-          <span></span>
-          <span></span>
-      </div>
-
-
-        <div class="menu" [class.menuClasse]="menuVariable">
-          <ul>
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Servicios</a></li>
-            <li><a href="#">Calculadora</a></li>
-            <li><a href="#">Contacto</a></li>
-            <li><a href="#">Nosotros</a></li>
-          </ul>
-        </div>
-
-      </div>
-
+<header data-aos="fade-down" class="flex items-center justify-between bg-light-100/80 px-5 backdrop-blur dark:bg-dark-100/80 border-b border-b-light-200 dark:border-b-dark-200">
+  <!-- #region logo-->
+  <div
+    class="pointer-events-none -ml-2 flex min-w-max scale-75 select-none items-center gap-1.5 rounded-lg bg-dark-100 p-1 text-center transition-colors duration-1000 dark:bg-light-100">
+    <img class="aspect-auto w-9 border-r border-r-slate-300 pr-0.5" src="assets/icon/aumc-thum.png"
+      alt="logo AUMC services" />
+    <div class="flex flex-col -space-y-1 px-1">
+      <span class="tracking-widest text-white dark:text-[#42847f]">AUMC</span>
+      <span class="font-serif text-[#73bdb1]">services</span>
     </div>
-
   </div>
-</header>
- -->
+  <!-- #endregion -->
 
-<!--separator-->
-
-<div class="nav">
-    <input type="checkbox" id="nav-check">
-    <div class="nav-header">
-        <div class="nav-title" (click)="quitarnav()">
-            <img src="./assets/logo-aumc.png" alt="Chicago" class="d-block w-100">
-        </div>
-    </div>
-    <div class="nav-btn">
-        <label for="nav-check" (click)="quitarnav()">
-      <span></span>
-      <span></span>
-      <span></span>
-    </label>
-    </div>
-
-    <div class="nav-links" id="nav-links">
-        <a href="">Inicio</a>
-        <a class="nav-link dropdown-toggle" (click)="quitarnav2()" style="color:transparent" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          <a style="color: #333333; text-decoration: none;" routerLink="/servicios" >Servicio</a>
+  <input class="peer hidden" type="checkbox" id="checkMenu" />
+  <nav
+    class="invisible absolute left-0 top-full -z-10 flex w-full -translate-y-full flex-wrap items-center justify-center rounded-b-xl bg-light-100 p-5 opacity-0 shadow-2xl transition-all duration-300 ease-in-out peer-checked:visible peer-checked:translate-y-0 peer-checked:opacity-100 peer-checked:backdrop-blur-sm dark:bg-dark-100 md:visible md:relative md:translate-y-0 md:rounded-none md:bg-transparent md:p-0 md:opacity-100 md:shadow-none dark:md:bg-transparent">
+    <ul class="flex w-full flex-wrap gap-5 md:w-auto">
+      <li class="w-full md:w-auto" *ngFor="let link of links">
+        <a class="block min-w-full rounded-md py-2 text-center text-lg transition-all duration-75 hover:bg-dark-primary-200/10 md:rounded-t-none md:text-base md:hover:border-t-2 md:hover:border-t-dark-primary-200"
+          routerLinkActive="md:border-t-2 md:border-solid font-bold md:font-normal md:dark:border-dark-primary-100 md:border-light-primary-100 md:bg-inherit"
+          [routerLinkActiveOptions]="{ exact: true }" [routerLink]="link.path">
+          {{ link.label }}
         </a>
-        <div class="container-fluid dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <div class="row "> 
-             <div class="col-3 p-5 d-flex justify-content-center align-content-center our-services">
-              <h2 style="text-align: center;">Nuestros Servicios</h2>
-             </div>
+      </li>
+    </ul>
 
-             <div class="col-9 ps-3 pe-5 pb-5 pt-4">
-                 <div class="row">
-                  <div class="col-3"> 
-                    <div class="row">
-                      <div class="col-12"><h4 class="categoria-servicio pb-2 pt-2 ">Trámites</h4></div>
-                      </div>
-                      <div class="row">
-                        <div class="col-12 pb-1">Opción 1</div>
-                        <div class="col-12 pb-1">Opción 2</div>
-                        <div class="col-12 pb-1">Opción 3</div>
-                        <div class="col-12 pb-1">Opción 4</div>
-                      </div>
-                  </div>
-                  <div class="col-3">   <div class="row">
-                    <div class="col-12"><h4 class="categoria-servicio pb-2 pt-2 ">Asesorías</h4></div>
-                    </div>
-                    <div class="row">
-                      <div class="col-12 pb-1">Opción 1</div>
-                      <div class="col-12 pb-1">Opción 2</div>
-                      <div class="col-12 pb-1">Opción 3</div>
-                      <div class="col-12 pb-1">Opción 4</div>
-                    </div></div>
-                  <div class="col-3">  <div class="row">
-                    <div class="col-12"><h4 class="categoria-servicio pb-2 pt-2  ">Gobierno</h4></div>
-                    </div>
-                    <div class="row">
-                      <div class="col-12 pb-1">Opción 1</div>
-                      <div class="col-12 pb-1">Opción 2</div>
-                      <div class="col-12 pb-1">Opción 3</div>
-                      <div class="col-12 pb-1">Opción 4</div>
-                    </div></div>
-                  <div class="col-3">   <div class="row">
-                    <div class="col-12"><h4 class="categoria-servicio pb-2 pt-2  ">Altas</h4></div>
-                    </div>
-                    <div class="row">
-                      <div class="col-12 pb-1">Opción 1</div>
-                      <div class="col-12 pb-1">Opción 2</div>
-                      <div class="col-12 pb-1">Opción 3</div>
-                      <div class="col-12 pb-1">Opción 4</div>
-                    </div></div>
-                 </div>
-             </div>
-          </div>
-          <!-- <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li> -->
-        </div>
-
-
-        <a routerLink="/contacto" (click)="quitarnav2()">Contacto</a>
-        <a routerLink="/nosotros" (click)="quitarnav2()">Nosotros</a>
-        <a routerLink="/contact" (click)="quitarnav2()">Calculadora</a>
-
+    <div class="ml-0  flex w-full flex-wrap items-center justify-center gap-5 text-lg md:ml-auto md:w-auto">
+      <a href="https://www.facebook.com/aumc.services">
+        <i class="bi bi-facebook hover:text-light-text-200 dark:hover:text-dark-text-200"></i>
+      </a>
+      <a href="https://www.instagram.com/aumcservices.oficial/">
+        <i class="bi bi-instagram hover:text-light-text-200 dark:hover:text-dark-text-200"></i>
+      </a>
+      <a href="mailto:contacto@aumcservices.com">
+        <i class="bi bi-envelope hover:text-light-text-200 dark:hover:text-dark-text-200"></i>
+      </a>
+      <button class="w-full md:w-auto hover:rotate-[360deg] hover:scale-105 transition-all" (click)="changeTheme()">
+        <i [ngClass]="{ 'bi-sun': !isDarkMode, 'bi-moon': isDarkMode }" class="bi text-xl"></i>
+      </button>
     </div>
-</div>
+  </nav>
+
+  <label aria-label="botón menu" class="block md:hidden" for="checkMenu">
+    <i class="bi bi-list text-2xl"></i>
+  </label>
+</header>
