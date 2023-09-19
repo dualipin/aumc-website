@@ -1,68 +1,24 @@
-<footer data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-duration="500">
-  <div class="container-logo">
-    <div class="container-foto">
-      <img data-aos="zoom-in" data-aos-duration="1000" src="assets/icon/aumc-300.png" />
-    </div>
-    <p data-aos="fade-right" data-aos-duration="1000" data-aos-offset="1200px" data-aos-delay="1000">
-      AUMC<br /><span style="color: #47cbc0">SERVICES</span>
+<footer class="border-t border-t-light-300 dark:border-t-dark-300 overflow-hidden bg-light-100 dark:bg-dark-100">
+
+  <section class="flex justify-center items-center gap-4 border-b border-b-light-300 dark:border-b-dark-300 mx-16 py-5">
+    <img class="w-20" data-aos="zoom-in" data-aos-duration="1000" src="assets/icon/aumc-300.png" />
+    <p class="border-l dark:border-l-light-100 border-l-dark-100 pl-4 -ml-2 flex flex-col text-center">
+      AUMC<span class="font-serif tracking-widest dark:text-dark-primary-200 text-light-accent-200">services</span>
     </p>
-  </div>
-  <div class="grupo-2">
-    <div class="box">
-      <h3>Descubre</h3>
-      <ul style="list-style: none">
-        <li><a href="">Preguntas frecuentes</a></li>
-        <li><a href="#ventajas">Beneficios</a></li>
-        <li><a href="">Nuestro software</a></li>
-      </ul>
-    </div>
+  </section>
+  <section>
+    <ul class="flex justify-evenly md:justify-center md:gap-5 text-xl py-4 items-center">
+      <li *ngFor="let social of socialNetworks">
+        <a href="{{social.url}}" title="{{social.name}} de AUMC Services">
+          <i class="{{social.icon!}}"></i>
+        </a>
+      </li>
+    </ul>
+  </section>
+  <section> </section>
 
-    <div class="box">
-      <h3>Menú</h3>
-      <ul style="list-style: none">
-        <li><a routerLink="">Inicio</a></li>
-        <li><a href="">Servicios</a></li>
-        <li><a routerLink="/customers">Contactos</a></li>
-        <li><a routerLink="/providers">Nosotros</a></li>
-      </ul>
-    </div>
-
-    <div class="box">
-      <h3>Legal</h3>
-      <ul style="list-style: none">
-        <li><a href="">Poíticas de trato de datos</a></li>
-        <li><a href="">Términos y condiciones</a></li>
-      </ul>
-    </div>
-
-    <div class="box">
-      <h3>Información</h3>
-
-      <ul style="list-style: none">
-        <li>228 363 685</li>
-        <li>contacto@restaurant.com</li>
-        <li>Calle Bocanegra #18, Xalapa,Ver,México.</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="grupo-3">
-    <div class="media-icon-list">
-      <ul class="ul-list" style="list-style: none">
-        <li>
-          <a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a>
-        </li>
-
-        <li>
-          <a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a>
-        </li>
-        <li>
-          <a href=""><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
-        </li>
-      </ul>
-    </div>
-    <div class="copyright-container">
-      <p>© Todos los derechos reservados</p>
-    </div>
-  </div>
+  <section class="bg-light-200 mx-10 dark:bg-dark-200 text-center rounded-t-xl p-2">
+    <p>Calle Bocanegra #18, Xalapa, Veracruz, México</p>
+    <p class="">© Todos los derechos reservados</p>
+  </section>
 </footer>
