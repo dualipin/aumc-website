@@ -1,21 +1,69 @@
 <article>
-
   <section
-    class="animate__animated animate__fadeIn flex min-h-screen flex-col items-center justify-center bg-white/50 bg-cover bg-fixed bg-center bg-blend-darken dark:bg-black/50"
-    style="background-image: url(assets/image/imagen-contacto.jpg)">
+    class="animate__animated animate__fadeIn relative flex min-h-screen flex-col items-center justify-center bg-white/50 bg-cover bg-fixed bg-center bg-blend-darken dark:bg-black/50"
+    style="background-image: url(assets/image/imagen-contacto.jpg)"
+  >
     <div
-      class="transition-colors  duration-300 bg-dark-100/30 dark:bg-dark-primary-100/30 backdrop-blur rounded-full p-2 aspect-square w-1/2 md:w-1/3 lg:w-1/4 flex flex-col justify-center items-center">
-      <img class="w-1/2" src="assets/icon/aumc-300.png" alt="icono de AUMC Services">
-      <h1 class="text-center text-xl md:text-4xl text-white">
+      data-aos="zoom-in"
+      class="flex aspect-square w-1/2 flex-col items-center justify-center rounded-full bg-dark-100/30 p-2 drop-shadow-lg backdrop-blur transition-colors duration-300 dark:bg-dark-primary-100/30 md:w-1/3 lg:w-1/4"
+    >
+      <img
+        class="w-1/2"
+        src="assets/icon/aumc-300.png"
+        alt="icono de AUMC Services"
+      />
+      <h1 class="text-center text-xl text-white md:text-4xl">
         AUMC
-        <span class="block tracking-widest font-serif text-white dark:text-dark-primary-100">services</span>
+        <span
+          class="block font-serif tracking-widest text-light-primary-100 dark:text-dark-primary-100"
+          >services</span
+        >
       </h1>
     </div>
-    <div class="px-5 py-4 text-white">
-      <h2 class="text-2xl text-center">Descubre las ventajas de tener un <strong>contador</strong></h2>
+    <div data-aos="fade-up" class="px-5 py-6 text-white">
+      <h2 class="text-center text-2xl md:text-4xl">
+        Descubre las ventajas de tener un <strong>contador</strong>
+      </h2>
     </div>
+    <i
+      class="bi bi-arrow-down-circle absolute bottom-5 animate-bounce text-xl font-extrabold text-white"
+    ></i>
   </section>
-  <section>
+  <section class="overflow-hidden p-10">
+    <section class="text-center">
+      <h2 class="py-2 text-4xl" data-aos="fade-right">
+        Ofrecemos distintos servicios con atención de primera clase
+      </h2>
+      <h3 class="py-6 text-3xl" data-aos="fade-left">
+        ¡Deja tus finanzas en manos de
+        <strong class="text-dark-accent-200 dark:text-white"
+          >AUMC
+          <span
+            class="font-serif text-dark-primary-100 dark:text-dark-accent-100"
+            >services</span
+          ></strong
+        >!
+      </h3>
+    </section>
 
+    <section
+      class="mt-10 grid grid-cols-1 place-content-center gap-3 md:grid-cols-2"
+    >
+      <article
+        data-aos="flip-left"
+        class="rounded-lg bg-light-200 p-2 text-center shadow-lg dark:bg-dark-100"
+        *ngFor="let card of cardsVentajas"
+      >
+        <section class="flex flex-wrap items-center justify-center gap-4">
+          <i class="{{ card.icon }} text-6xl w-full py-2"></i>
+          <h3 class="text-2xl">{{ card.title }}</h3>
+        </section>
+        <p class="p-3">{{ card.description }}</p>
+      </article>
+    </section>
+  </section>
+  <section class="grid place-items-center p-5">
+    <h2 class="text-3xl font-semibold py-3">Visítenos</h2>
+    <iframe class="aspect-video w-10/12 shadow-lg" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3760.069466580291!2d-96.90452882444933!3d19.538630981763536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85db31cb97df07f9%3A0x2b29102acb787031!2sAUMC%20Services!5e0!3m2!1ses-419!2smx!4v1695099724868!5m2!1ses-419!2smx" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
   </section>
 </article>
