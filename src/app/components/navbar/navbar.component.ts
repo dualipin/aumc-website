@@ -1,37 +1,47 @@
-import { Component } from "@angular/core"
-import { Links } from "./navbar.link"
+import { Component } from '@angular/core';
+import { Links } from './navbar.link';
 
 @Component({
-  selector: "app-navbar",
-  templateUrl: "./navbar.component.html",
+  selector: 'app-navbar',
+  templateUrl: './navbar.component.html',
 })
 export class NavbarComponent {
   private systemDarkModePreference = window.matchMedia(
-    "(prefers-color-scheme: dark)",
-  )
+    '(prefers-color-scheme: dark)',
+  );
 
   //Links of the navbar
-  links = Links
+  links = Links;
 
-  isDarkMode = this.systemDarkModePreference.matches
+  isDarkMode = this.systemDarkModePreference.matches;
+
+  navbar = false;
 
   constructor() {
-    this.changeTheme()
-    this.systemDarkModePreference.onchange = () => this.changeTheme()
+    this.changeTheme();
+    this.systemDarkModePreference.onchange = () => this.changeTheme();
+  }
+
+  disableNavbar() {
+    this.navbar = false;
+  }
+
+  changeActiveNavbar() {
+    this.navbar = !this.navbar;
   }
 
   changeTheme() {
     const $favicon: HTMLLinkElement = document.querySelector(
       "link[rel='shortcut icon']",
-    ) as HTMLLinkElement
+    ) as HTMLLinkElement;
 
     if (this.isDarkMode) {
-      $favicon.href = "assets/icon/favicon-d.ico"
-      document.documentElement.classList.add("dark")
+      $favicon.href = 'assets/icon/favicon-d.ico';
+      document.documentElement.classList.add('dark');
     } else {
-      $favicon.href = "assets/icon/favicon-l.ico"
-      document.documentElement.classList.remove("dark")
+      $favicon.href = 'assets/icon/favicon-l.ico';
+      document.documentElement.classList.remove('dark');
     }
-    this.isDarkMode = !this.isDarkMode
+    this.isDarkMode = !this.isDarkMode;
   }
 }
