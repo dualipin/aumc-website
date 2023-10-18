@@ -1,63 +1,144 @@
-<body>
-    <div class="container-fluid">
-        <div class="texto-header">
-            <h1>Contáctanos</h1>
-            <P>Nuestros servicios están diseñados para satisfacer las necesidades de grandes, pequeñas y medianas empresas. Para mayor información puede contactarnos a través del siguiente formulario</P>
+<article
+  class="animate__animated animate__fadeIn h-full min-h-screen bg-cover"
+  style="background-image: url('assets/image/contacto-img.jpg')"
+>
+  <section
+    class="flex h-full w-full flex-wrap bg-white/70 py-20 backdrop-blur-sm dark:bg-black/70"
+  >
+    <section
+      class="flex h-auto w-full flex-col items-center justify-center text-center sm:h-full sm:w-1/2"
+    >
+      <h1 class="text-4xl font-bold">Contacto</h1>
+      <p class="px-10 py-5 text-base sm:text-2xl">
+        Nuestros servicios están diseñados para satisfacer las necesidades de
+        grandes, pequeñas y medianas empresas.
+      </p>
+
+      <section class="">
+        <ul class="flex justify-evenly md:justify-center gap-5 text-xl py-4 items-center">
+          <li *ngFor="let social of socialNetworks">
+            <a
+              href="{{social.url}}"
+              title="{{social.name}} de AUMC Services"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="{{social.icon!}} hover:opacity-80 text-3xl"></i>
+            </a>
+          </li>
+        </ul>
+      </section>
+    </section>
+    <section class="flex w-full items-center justify-center sm:w-1/2">
+      <form
+        class="m-2 flex flex-col items-center gap-2 rounded-lg bg-light-100 p-5 px-10 shadow-lg dark:bg-dark-100 md:gap-6 md:p-10"
+        [formGroup]="formContacto"
+        (ngSubmit)="formSubmit()"
+      >
+        <p class="mb-5 text-center text-2xl font-bold">
+          Rellene el siguiente formulario
+        </p>
+        <div
+          class="flex w-full flex-col rounded-md bg-light-200 p-3 dark:bg-dark-200 md:gap-5"
+        >
+          <div class="field">
+            <label for="nombre">Nombre</label
+            ><input formControlName="nombre" type="text" />
+          </div>
+          <div class="field">
+            <label for="phone">Teléfono</label
+            ><input formControlName="phone" type="tel" />
+          </div>
+          <div class="field">
+            <label for="email">Correo Electrónico</label
+            ><input formControlName="email" type="email" />
+          </div>
+          <div class="field">
+            <label for="mensaje">Mensaje</label
+            ><textarea
+              formControlName="mensaje"
+              id="mensaje"
+              class="w-full resize-none"
+            ></textarea>
+          </div>
         </div>
+        <button
+          class="rounded-lg bg-light-accent-100 px-10 py-2 text-white transition-colors duration-300 hover:bg-light-accent-200 dark:bg-dark-accent-100 dark:text-black dark:hover:bg-dark-accent-200 dark:hover:text-white"
+          type="submit"
+        >
+          Enviar
+        </button>
+      </form>
+    </section>
+  </section>
+</article>
 
+<div
+  *ngIf="isActiveModal"
+  [ngClass]="{
+    'animate__fadeIn animate__faster': isActiveModal
+  }"
+  class="animate__animated relative z-10"
+  aria-labelledby="modal-title"
+  role="dialog"
+  aria-modal="true"
+>
+  <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
 
-        <div class="row formulario">
-            <div class="col-xl-5 col-md-6 col-xs-12 inputs-cont">
-                <div class="inputs-header">
-                    <SPAN>INGRESA TUS DATOS:</SPAN>
-                </div>
-                <div class="d-flex justify-content-center flex-column">
-                    <input class="inputCamp" type="text" placeholder="Nombre">
-                    <input class="inputCamp" type="text" placeholder="Número">
-                    <input class="inputCamp" type="email" placeholder="Correo">
-                    <textarea placeholder="Escribe tu mensaje..."></textarea>
-
-                </div>
-                <button class="btn btn-primary" style="width: 40%; margin-left: 30%; margin-left: 30%; text-align: center; margin-top: .75rem;">Enviar</button>
-                <div class="datos">
-                    <ul class="lista-contacto">
-                        <li><i class="fa fa-phone" aria-hidden="true"></i>228 420 8734</li>
-                        <li><i class="fa fa-envelope" aria-hidden="true"></i>Contacto@aumcservices.com</li>
-                        <li><i class="fa fa-map-marker" aria-hidden="true"></i>Calle Dos, 44-1, Xalapa,México</li>
-
-                    </ul>
-                </div>
-
+  <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+    <div
+      class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0"
+    >
+      <div
+        class="relative transform overflow-hidden rounded-lg bg-light-100 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg"
+      >
+        <div class="bg-white px-4 pb-4 pt-5 dark:bg-dark-100 sm:p-6 sm:pb-4">
+          <div class="sm:flex sm:items-start">
+            <div
+              class="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10"
+            >
+              <svg
+                class="h-6 w-6 text-red-600"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"
+                />
+              </svg>
             </div>
-            <div class="col-xl-7 col-md-6  col-xs-12 imagencont">
-                <img src="./assets/contactoimg.jpg">
+            <div class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
+              <h3
+                class="text-base font-semibold leading-6 text-black dark:text-white"
+                id="modal-title"
+              >
+                Ocurrió un error al enviar el formulario
+              </h3>
+              <div class="mt-2">
+                <p class="text-sm text-light-text-200 dark:text-dark-text-200">
+                  Disculpe los inconvenientes, intente mas tarde.
+                </p>
+              </div>
             </div>
+          </div>
         </div>
-        <div class="container-fluid ser-cont">
-            <h3 style="text-align: center; font-size: 40px; margin-top:4rem">Servicios contables en AUMC</h3>
-            <p>Somos expertos en el área de asesoría contable, tributaria y laboral</p>
-
-            <div class="row servicios-row">
-                <div class="d-flex flex-column col-xl-3 col-md-3 col-sm-6 col-xs-6 itemserv">
-                    <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
-                    <span>Citas SAt</span>
-                    <button class="btn btn-primary botons">Ver más</button>
-                </div>
-                <div class="d-flex flex-column col-xl-3 col-md-3 col-sm-6 col-xs-6 itemserv"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                    <span>Trámite de SAS</span>
-                    <button class="btn btn-primary botons">Ver más</button></div>
-                <div class="d-flex flex-column col-xl-3 col-md-3 col-sm-6 col-xs-6 itemserv">
-                    <i class="fa fa-line-chart" aria-hidden="true"></i>
-                    <span>Saldo a favor</span>
-                    <button class="btn btn-primary botons">Ver más</button>
-                </div>
-                <div class="d-flex flex-column col-xl-3 col-md-3 col-sm-6 col-xs-6 itemserv">
-                    <i class="fa fa-question" aria-hidden="true"></i>
-                    <span>Asesoría finaciera</span>
-                    <button class="btn btn-primary botons">Ver más</button></div>
-            </div>
+        <div
+          class="bg-light-200 px-4 py-3 dark:bg-dark-200 sm:flex sm:flex-row-reverse sm:px-6"
+        >
+          <button
+            type="button"
+            class="inline-flex w-full justify-center rounded-md bg-dark-primary-100 px-3 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-dark-primary-200 sm:ml-3 sm:w-auto"
+            (click)="deactivateModal()"
+          >
+            Aceptar
+          </button>
         </div>
-
-
+      </div>
     </div>
-</body>
+  </div>
+</div>
