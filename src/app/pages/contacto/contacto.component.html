@@ -13,18 +13,28 @@
         Nuestros servicios están diseñados para satisfacer las necesidades de
         grandes, pequeñas y medianas empresas.
       </p>
-        <ul class="flex justify-evenly md:justify-center gap-5 text-xl py-4 items-center">
-          <li *ngFor="let social of socialNetworks">
-            <a
-              href="{{social.url}}"
-              title="{{social.name}} de AUMC Services"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i class="{{social.icon!}} hover:opacity-80 text-3xl"></i>
-            </a>
-          </li>
+      <ul
+        class="flex items-center justify-evenly gap-5 py-4 text-xl md:justify-center"
+      >
+        <li *ngFor="let social of socialNetworks">
+          <a
+            href="{{ social.url }}"
+            title="{{ social.name }} de AUMC Services"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="{{ social.icon! }} hover:opacity-80 text-3xl"></i>
+          </a>
+        </li>
+      </ul>
+
+      <section class="my-10">
+        <ul>
+          <li class="flex gap-3"><i class="bi bi-telephone-fill"></i>228 420 8734</li>
+          <li class="flex gap-3"><i class="bi bi-envelope-at-fill"></i>Contacto@aumcservices.com</li>
+          <li class="flex gap-3"><i class="bi bi-geo-alt-fill"></i>Calle Dos, 44-1, Xalapa, México</li>
         </ul>
+      </section>
     </section>
     <section class="flex w-full items-center justify-center sm:w-1/2">
       <form
